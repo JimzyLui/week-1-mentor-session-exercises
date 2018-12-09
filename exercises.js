@@ -1,3 +1,4 @@
+"use strict";
 /** Function: firstReverse
  * The function will take the str parameter being passed in and
  * return the string in reversed order
@@ -6,7 +7,17 @@
  * ie: "cat" => "tac"
  */
 
- /** Function: alphaOrder
+var firstReverse = str => {
+  if (typeof str !== "string") {
+    return null;
+  }
+  return str
+    .split("")
+    .reverse()
+    .join("");
+};
+
+/** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
  * @param {string} str
@@ -14,7 +25,7 @@
  * ie: "cake" => "acek"
  */
 
- /** Function: vowelCount
+/** Function: vowelCount
  * The function will take the num parameter being passed in and
  * return the number of vowels in the string
  * @param {string} num
@@ -22,7 +33,7 @@
  * ie: "oreo" => 3
  */
 
- /** Function: timeConvert
+/** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
  * and minutes with a colon
@@ -31,7 +42,7 @@
  * ie: 68 => 1:8
  */
 
- /** Function: repeatString
+/** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
  * @param {string} str
@@ -40,12 +51,11 @@
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
-
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
  * The module.exports syntax is a built-in javascript keyword that
- * allows functionality from this file to be used in other files.  
- * Here we are exporting an object with a bunch of keys that will reference 
+ * allows functionality from this file to be used in other files.
+ * Here we are exporting an object with a bunch of keys that will reference
  * the functions you have made. After you are done implementing a function,
  * change the 'null' to reference the corresponding function you have just created.
  * Then go into your terminal and run 'npm test' to see if the tests pass for your function.
@@ -56,9 +66,9 @@
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
-}
+  firstReverse: firstReverse,
+  alphaOrder: null,
+  vowelCount: null,
+  timeConvert: null,
+  repeatString: null
+};
