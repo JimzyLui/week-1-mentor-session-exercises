@@ -68,13 +68,24 @@ var timeConvert = num => {
 };
 /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
- * num times (second argument). Return an empty string if num is a negative number
+ * num times (second argument). -----Return an empty string if num is a negative number
  * @param {string} str
  * @param {num} times
  * @return {string} repeated num times
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
-
+var repeatString = (str, times) => {
+  if (typeof str !== "string") {
+    return null;
+  }
+  if (typeof times !== "number") {
+    return null;
+  }
+  if (times < 0) {
+    return "";
+  }
+  return str.repeat(times);
+};
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
  * The module.exports syntax is a built-in javascript keyword that
@@ -94,5 +105,5 @@ module.exports = {
   alphaOrder: alphaOrder,
   vowelCount: vowelCount,
   timeConvert: timeConvert,
-  repeatString: null
+  repeatString: repeatString
 };
