@@ -24,7 +24,15 @@ var firstReverse = str => {
  * @return {string} in alphabetical order
  * ie: "cake" => "acek"
  */
-
+var alphaOrder = str => {
+  if (typeof str !== "string") {
+    return null;
+  }
+  return str
+    .split("")
+    .sort()
+    .join("");
+};
 /** Function: vowelCount
  * The function will take the num parameter being passed in and
  * return the number of vowels in the string
@@ -67,7 +75,7 @@ var firstReverse = str => {
 
 module.exports = {
   firstReverse: firstReverse,
-  alphaOrder: null,
+  alphaOrder: alphaOrder,
   vowelCount: null,
   timeConvert: null,
   repeatString: null
