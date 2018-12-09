@@ -34,16 +34,25 @@ var alphaOrder = str => {
     .join("");
 };
 /** Function: vowelCount
- * The function will take the num parameter being passed in and
+ * The function will take the str parameter being passed in and
  * return the number of vowels in the string
- * @param {string} num
+ * @param {string} str
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
 
+var vowelCount = str => {
+  if (typeof str !== "string") {
+    return null;
+  }
+  return str
+    .toLowerCase()
+    .split("")
+    .filter(x => "aeiou".split("").includes(x)).length;
+};
 /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
- * return the number of hours and minutes. Seperate the number of hours
+ * return the number of hours and minutes. Separate the number of hours
  * and minutes with a colon
  * @param {number} str
  * @return {string} as hours:minutes
@@ -76,7 +85,7 @@ var alphaOrder = str => {
 module.exports = {
   firstReverse: firstReverse,
   alphaOrder: alphaOrder,
-  vowelCount: null,
+  vowelCount: vowelCount,
   timeConvert: null,
   repeatString: null
 };
