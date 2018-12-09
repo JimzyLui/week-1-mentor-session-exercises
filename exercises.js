@@ -51,14 +51,21 @@ var vowelCount = str => {
     .filter(x => "aeiou".split("").includes(x)).length;
 };
 /** Function: timeConvert
- * The function will take the str parameter representing the amount of minutes being passed in and
+ * The function will take the num parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Separate the number of hours
  * and minutes with a colon
- * @param {number} str
+ * @param {number} num
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
-
+var timeConvert = num => {
+  if (typeof num !== "number") {
+    return null;
+  }
+  var hours = Math.trunc(num / 60);
+  var minutes = num % 60;
+  return `${hours}:${minutes}`;
+};
 /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -86,6 +93,6 @@ module.exports = {
   firstReverse: firstReverse,
   alphaOrder: alphaOrder,
   vowelCount: vowelCount,
-  timeConvert: null,
+  timeConvert: timeConvert,
   repeatString: null
 };
